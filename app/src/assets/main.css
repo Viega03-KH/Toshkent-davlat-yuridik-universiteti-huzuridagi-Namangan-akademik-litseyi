@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+  background-color: #fdfdfd94; /* Ghost White */
+
+  background-image: url('../assets/bgimg/rm380-12.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+}
+
+
+
+
+
+/* _______________________________________________________ */
+.editor-content {
+  line-height: 1.75;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: justify;
+  hyphens: auto;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.7;
+}
+
+.editor-content h1,
+.editor-content h2,
+.editor-content h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+.editor-content p {
+  margin-bottom: 1em;
+}
+
+.editor-content ul,
+.editor-content ol {
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.editor-content ul li::marker,
+.editor-content ol li::marker {
+  color: #2563eb;
+  /* blue-600 */
+}
+
+.editor-content a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.editor-content blockquote {
+  border-left: 4px solid #d1d5db;
+  /* gray-300 */
+  padding-left: 1em;
+  color: #6b7280;
+  font-style: italic;
+  margin: 1em 0;
+}
+
+.editor-content img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  margin: 1em 0;
+}
+
+.editor-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5em;
+}
+
+.editor-content table th,
+.editor-content table td {
+  border: 1px solid #ddd;
+  padding: 0.75em;
+  text-align: left;
+}
+
+.editor-content code {
+  background: #f3f4f6;
+  padding: 0.2em 0.4em;
+  border-radius: 0.3rem;
+  font-family: monospace;
+}
+
+
+
+/* _______________________________________________________ */
+
+/* Rangsiz ko‘rish */
+.mode-no-color {
+  filter: grayscale(100%) !important;
+}
+
+/* Rasmlarsiz ko‘rish (full) */
+.mode-no-images img,
+.mode-no-images iframe[src*="youtube"],
+.mode-no-images [class*="image"],
+.mode-no-images [class*="img"] {
+  display: none !important;
+}
+
+/* 🔥 background-image ni o‘chirish */
+.mode-no-images * {
+  background-image: none !important;
+}
+
+.mode-no-images h1,
+.mode-no-images h2,
+.mode-no-images h3,
+.mode-no-images h4,
+.mode-no-images h5,
+.mode-no-images h6,
+.mode-no-images p,
+.mode-no-images a,
+.mode-no-images span,
+.mode-no-images button,
+.mode-no-images label,
+.mode-no-images strong,
+.mode-no-images em,
+.mode-no-images td,
+.mode-no-images th,
+.mode-no-images div,
+.mode-no-images li {
+  color: #7c7c7c !important; /* slate-800 */
+}
+

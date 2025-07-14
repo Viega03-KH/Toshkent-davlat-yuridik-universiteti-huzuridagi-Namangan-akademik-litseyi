@@ -1,0 +1,26 @@
+import { defineStore } from 'pinia'
+import { apiService } from '@/services/all.service' // yoki apiService faylingiz yo‘liga qarab
+
+export const useallNewsStore = defineStore('allnews', {
+  state: () => ({
+    items: [],
+    loading: false,
+    error: null,
+  }),
+
+  actions: {
+    async loadallNews(type) {
+      this.loading = true
+      this.error = null
+      try {
+        const res = await apiService.getNews(type)
+        this.items = res.data?.results || res.data || []
+      } catch (err) {
+        this.error = err
+        console.error('allNews fetch error:', err)
+      } finally {
+        this.loading = false
+      }
+    }
+  }
+})
