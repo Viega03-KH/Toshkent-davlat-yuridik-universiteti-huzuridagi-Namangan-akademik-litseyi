@@ -1,40 +1,62 @@
 <script setup>
-  import 'vue3-carousel/carousel.css'
-  import Icon from '@/components/ui/Icon.vue'
-  import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel'
-  import { onMounted, watch } from 'vue'
-  import { useNewsStore } from '@/stores/newStore'
-  import NewSlide from './newslide.vue' // ✅ kartani import qildik
+import 'vue3-carousel/carousel.css'
+import Icon from '@/components/ui/Icon.vue'
+import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel'
+import { onMounted, watch, ref } from 'vue'
+import { useNewsStore } from '@/stores/newStore'
+import NewSlide from './newslide.vue'
 
-  const props = defineProps({
-    type: {
-      type: Number,
-      default: 1
-    }
-  })
-
-  const newsStore = useNewsStore()
-
-  const loadNews = () => {
-    newsStore.loadNews(props.type)
+const props = defineProps({
+  type: {
+    type: Number,
+    default: 1
   }
+})
 
-  onMounted(loadNews)
-  watch(() => props.type, loadNews)
+const newsStore = useNewsStore()
 
-  const config = {
-    height: 600,
-    itemsToShow: 1,
-    gap: 3,
-    autoplay: 2500,
-    wrapAround: true,
-    pauseAutoplayOnHover: true,
+const loadNews = () => {
+  newsStore.loadNews(props.type)
+}
+
+onMounted(() => {
+  loadNews()
+  updateAutoplay()
+  window.addEventListener('resize', updateAutoplay)
+})
+
+watch(() => props.type, loadNews)
+
+const autoplay = ref(2500) // default autoplay
+
+function updateAutoplay() {
+  const screenWidth = window.innerWidth
+  if (screenWidth <= 768) {
+    autoplay.value = 7000 // mobil uchun sekinroq
+  } else {
+    autoplay.value = 2000 // desktop uchun tezroq
   }
+}
+
+const config = ref({
+  height: 600,
+  itemsToShow: 1,
+  gap: 3,
+  wrapAround: true,
+  pauseAutoplayOnHover: true,
+  autoplay: autoplay.value,
+})
+
+// autoplay dinamik o‘zgarishi uchun kuzatuvchi
+watch(autoplay, (newVal) => {
+  config.value.autoplay = newVal
+})
 </script>
+
 
 <template>
   <div v-if="newsStore.items.length" class="w-full max-w-[1400px] mx-auto">
-    <Carousel v-bind="config" class="w-full">
+    <Carousel v-bind="config" class="w-full" :touch-drag="false" :mouse-drag="false" >
       <Slide v-for="item in newsStore.items.filter(i => i.type === 1).slice(0, 8)" :key="item.id" class="w-full z-0">
         <NewSlide :item="item" />
       </Slide>
@@ -60,14 +82,14 @@
 </template>
 
 <style>
-  .carousel {
-    --vc-pgn-background-color: rgba(255, 255, 255, 0.7);
-    --vc-pgn-active-color: rgba(255, 255, 255, 1);
-    --vc-nav-background: rgba(255, 255, 255, 0.7);
-    --vc-nav-border-radius: 100%;
-  }
+.carousel {
+  --vc-pgn-background-color: rgba(255, 255, 255, 0.7);
+  --vc-pgn-active-color: rgba(255, 255, 255, 1);
+  --vc-nav-background: rgba(255, 255, 255, 0.7);
+  --vc-nav-border-radius: 100%;
+}
 
-  .carousel__next {
+.carousel__next {
   background: rgba(0, 0, 0, 0.548);
   border-top-left-radius: 50%;
   border-radius: 50%;
@@ -88,7 +110,8 @@
   height: 35px;
   color: white;
 }
-.carousel__next:hover, 
+
+.carousel__next:hover,
 .carousel__prev:hover {
   color: aliceblue;
 }

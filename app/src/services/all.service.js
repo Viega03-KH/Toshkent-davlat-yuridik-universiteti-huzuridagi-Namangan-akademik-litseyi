@@ -26,7 +26,7 @@ export const apiService = {
   },
 
   getFaq() {
-    return api.get('api/site/faq')
+    return api.get('api/site/faq') // done
   },
 
   getPhoto() {
@@ -34,7 +34,7 @@ export const apiService = {
   },
 
   sendAppeal(data) {
-    return api.post('/site/appeal', data)
+    return api.post('api/site/appeal', data)
   },
 
   getBanner() {
@@ -46,6 +46,6 @@ export const apiService = {
   },
 
   getContact() {
-    return api.get('/site/contacts')
+    return api.get('api/site/contacts') // done
   }
 }

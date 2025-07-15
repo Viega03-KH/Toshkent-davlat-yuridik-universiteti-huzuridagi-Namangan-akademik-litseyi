@@ -29,7 +29,7 @@
         <div v-else-if="results.length === 0" class="text-gray-500 text-center">Hech nima topilmadi</div>
         <router-link @click="closeModal" :to="`/view/news/${item.url}`" v-else v-for="item in results" :key="item.id"
           class="bg-gray-100 p-3 rounded hover:bg-gray-200 cursor-pointer focus:outline-violet-500">
-          <strong class="text-md font-light italic">{{ item.name }}</strong>
+          <strong class="text-md font-light">{{ item.name }}</strong>
         </router-link>
       </div>
     </div>

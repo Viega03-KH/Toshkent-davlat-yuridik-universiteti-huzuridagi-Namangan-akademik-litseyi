@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-xl mx-auto text-center bg-blue-50 p-2 rounded-lg shadow-xl">
+    <div class="max-w-xl mx-auto text-center bg-blue-50 px-8 rounded-sm shadow-2xl">
       <!-- Profil rasmi va ism -->
       <div class="flex flex-col items-center space-y-1">
         <img
@@ -7,7 +7,7 @@
           alt="Profil rasmi"
           class="w-20 h-20 rounded-full object-cover border"
         />
-        <h1 class="text-lg font-bold uppercase leading-tight">Toshkent davlat yuridik universiteti</h1>
+        <h1 class="text-lg font-lingth uppercase leading-tight">Toshkent davlat yuridik universiteti</h1>
         <span class="text-gray-400 text-sm font-semibold">@tsulofficial</span>
   
         <!-- YouTube tugmasi -->

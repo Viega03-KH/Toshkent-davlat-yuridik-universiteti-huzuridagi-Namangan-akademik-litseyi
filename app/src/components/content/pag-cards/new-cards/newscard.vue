@@ -1,7 +1,7 @@
 <template>
   <li class="flex">
     <router-link :to="`/view/news/${item.url}`"
-      class="group relative block h-[350px] w-full shadow-lg rounded-md text-left bg-cover bg-center cursor-pointer overflow-hidden"
+      class="group relative block h-[350px] w-full shadow-lg rounded-md text-left bg-cover bg-center cursor-pointer overflow-hidden hover:scale-[102%] transition ease-in-out will-change-transform"
       :style="{ backgroundImage: `url(${item.img})` }">
       <!-- Gradient -->
       <div class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-black"></div>

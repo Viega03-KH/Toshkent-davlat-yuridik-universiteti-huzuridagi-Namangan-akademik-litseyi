@@ -23,11 +23,13 @@
     <Carsuel />
   </div>
   <StatsSection />
-<ExtralinkViews />
+  <ExtralinkViews />
+  <PagPhone />
 </template>
 
 
 <script setup>
+import PagPhone from '@/components/content/pag-contact/pag-phone.vue'
 import ExtralinkViews from './ExtralinkViews.vue'
 import NewCard from '@/components/content/pag-news/newcard.vue'
 import Acon from '@/components/content/pag-acon/acon.vue'

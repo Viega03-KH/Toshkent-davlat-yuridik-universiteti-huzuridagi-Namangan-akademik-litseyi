@@ -5,7 +5,7 @@ import Drawer from './components/comman/drawer/Drawer.vue'
 import SearchModal from './components/searchbar/search-modal.vue'
 import ScrollToTop from './components/ui/ScrollToTop.vue'
 import SpecialModal from './components/special/special-modal.vue'
-import Media from './components/comman/media/media.vue'
+
 </script>
 
 <template>
@@ -18,5 +18,4 @@ import Media from './components/comman/media/media.vue'
   <SearchModal />
   <ScrollToTop />
   <SpecialModal />
-  <!-- <Media  /> -->
 </template>

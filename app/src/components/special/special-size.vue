@@ -1,14 +1,14 @@
 <template>
     <div class="w-full max-w-xs mx-auto py-6">
-        <input type="range" min="1" max="5" step="1" v-model="scaleStep" class="range" />
-        <div class="flex justify-between px-2.5 mt-1 text-xs text-gray-500">
+        <input type="range" min="1" max="5" step="1" v-model="scaleStep" class="range text-blue-400" />
+        <div class="flex justify-between px-2.5 mt-1 text-xs text-blue-400">
             <span>|</span>
             <span>|</span>
             <span>|</span>
             <span>|</span>
             <span>|</span>
         </div>
-        <div class="flex justify-between px-2.5 mt-1 text-xs text-gray-700 font-semibold">
+        <div class="flex justify-between px-2.5 mt-1 text-xs text-blue-400 font-semibold">
             <span>1x</span>
             <span>1.01x</span>
             <span>1.05x</span>

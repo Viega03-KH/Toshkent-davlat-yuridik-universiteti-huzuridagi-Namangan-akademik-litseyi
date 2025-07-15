@@ -3,7 +3,7 @@ import bgImage from '@/assets/bgimg/tg_bg-1.png'
 </script>
 
 <template>
-  <a href="https://t.me/sizning_kanalingiz" target="_blank" rel="noopener noreferrer"
+  <a href="https://t.me/namangan_yuridik_litsey" target="_blank" rel="noopener noreferrer"
      class="relative items-center justify-between gap-4 rounded-md px-3 py-7 bg-no-repeat bg-cover bg-center hover:shadow-lg transition-all ease-in-out duration-100"
      :style="{ backgroundImage: `url(${bgImage})` }">
      

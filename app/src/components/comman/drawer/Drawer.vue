@@ -1,9 +1,9 @@
 <script setup>
     import DrawerMenu from "./DrawerMenu.vue"
     import Logo from "../navbar/logo.vue"
-    import Icon from "@/components/ui/Icon.vue"
     import Lang from '@/components/selectors/lang/Lang.vue'
     import {CircleX} from 'lucide-vue-next'
+    import drawerbg from '@/assets/bgimg/drawer.svg'
 </script>
 
 
@@ -23,6 +23,7 @@
                     <DrawerMenu />
                 </div>
             </div>
+            <img :src="drawerbg" class="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none z-0" />
         </div>
     </div>
 </template>

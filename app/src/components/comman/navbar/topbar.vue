@@ -5,16 +5,16 @@
       <!-- Chap tomonda: aloqa ma'lumotlari -->
       <ul class="flex items-center justify-center sm:justify-between md:w-auto w-full list-none gap-2">
         <li class="flex items-center">
-          <a href="tel:+998712767651" class="flex items-center gap-1 text-sm hover:underline">
+          <a :href="phone" class="flex items-center gap-1 text-sm hover:underline">
             <Phone :size="15" :stroke-width="0.8" />
-            <span>+998 71 276-76-51</span>
+            <span>{{ phone }}</span>
           </a>
         </li>
-        |
+        <strong class="hidden md:block" ><ChevronRight :size="16" :stroke-width="0.5" /></strong>
         <li class="flex items-center">
-          <a href="mailto:info@uznpu.uz" class="flex items-center gap-1 text-sm hover:underline">
-            <Mail :size="15" :stroke-width="0.8" />
-            <span>info@uznpu.uz</span>
+          <a :href="telegramLink" class="flex items-center gap-1 text-sm hover:underline">
+            <Send :size="15" :stroke-width="0.8" />
+            <span>{{ telegramUsername }}</span>
           </a>
         </li>
       </ul>
@@ -39,5 +39,20 @@
 import SearchButton from "@/components/searchbar/search-button.vue"
 import SpecialButton from "@/components/special/special-button.vue"
 import Lang from '@/components/selectors/lang/Lang.vue'
-import { Mail, Phone, SquareLibrary } from 'lucide-vue-next'
+import { Send, Phone, SquareLibrary, ChevronRight } from 'lucide-vue-next'
+import { useContactStore } from "@/stores/contactStore"
+import { onMounted, computed } from "vue"
+
+const contactStore = useContactStore()
+
+onMounted(() => {
+  contactStore.loadContact()
+})
+
+const phone = computed(() => contactStore.items?.phone || "")
+const telegramLink = computed(() => contactStore.items?.telegram_link || "")
+const telegramUsername = computed(() => {
+  const link = contactStore.items?.telegram_link || ""
+  return link.replace("https://t.me/", "")
+})
 </script>
