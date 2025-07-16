@@ -31,7 +31,7 @@
 
         <div class="flex justify-end p-1">
           <button class="btn" @click="openModal(item)">
-            Biografiyasi
+            {{ $t('staff-text-1') }}
           </button>
         </div>
       </div>

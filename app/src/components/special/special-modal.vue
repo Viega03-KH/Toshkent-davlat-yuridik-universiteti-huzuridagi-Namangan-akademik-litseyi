@@ -23,14 +23,14 @@ function resetAll() {
                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
             </form>
 
-            <h3 class="text-lg font-bold">Maxsus imkonyatlar</h3>
+            <h3 class="text-lg font-bold">{{ $t('soos-text-1') }}</h3>
             <div class="space-y-4 mt-4">
                 <SpecialColor ref="colorRef" />
                 <SpecialSize ref="sizeRef" />
                 <SpecialVois ref="voisRef" />
 
                 <button @click="resetAll" class="btn btn-outline btn-sm w-full">
-                    Barchasini o‘z holiga qaytarish
+                    {{ $t('soos-text-2') }}
                 </button>
             </div>
         </div>

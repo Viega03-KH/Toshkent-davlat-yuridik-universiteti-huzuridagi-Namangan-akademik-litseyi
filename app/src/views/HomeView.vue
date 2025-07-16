@@ -13,9 +13,9 @@
 
   <div class="pt-40">
     <div class="mb-6 flex items-end justify-between gap-4">
-      <h2 class="text-sm font-bold text-gray-800 lg:text-xl uppercase">Yangiliklar</h2>
+      <h2 class="text-sm font-bold text-gray-800 lg:text-xl uppercase">{{ $t('Yangiliklar') }}</h2>
 
-      <RouterLink to="view/news" class="btn">Barchasi</RouterLink>
+      <RouterLink to="view/news" class="btn">{{ $t('Barchasi') }}</RouterLink>
     </div>
     <NewCardHome />
   </div>

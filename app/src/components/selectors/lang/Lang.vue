@@ -45,13 +45,13 @@ function changeLang(lang) {
       <img :src="flags[langStore.lang]" alt="flag" class="w-5 h-5 rounded-sm" />
       <span class="font-light" >{{ langStore.lang.toUpperCase() }}</span>
     </div>
-    <!-- <ul tabindex="0" class="dropdown-content font-bold menu bg-base-100 rounded-md w-24 mt-1 z-[1] p-2 shadow-lg">
+    <ul tabindex="0" class="dropdown-content font-bold menu bg-base-100 rounded-md w-24 mt-1 z-[1] p-2 shadow-lg">
       <li v-for="l in langs" :key="l" @click="changeLang(l)">
         <a class="flex items-center gap-2">
           <img :src="flags[l]" alt="flag" class="w-5 h-5 rounded-sm" />
           <span class="font-light" >{{ l.toUpperCase() }}</span>
         </a>
       </li>
-    </ul> -->
+    </ul>
   </div>
 </template>

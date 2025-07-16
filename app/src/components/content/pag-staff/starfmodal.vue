@@ -12,7 +12,7 @@
       </div>
   
       <div class="modal-action mt-4 flex justify-end">
-        <button @click="$emit('close')" class="btn btn-sm">Yopish</button>
+        <button @click="$emit('close')" class="btn btn-sm">close</button>
       </div>
     </div>
   </div>
@@ -20,6 +20,7 @@
 </template>
 
 <script setup>
+  
 defineProps({
   item: {
     type: Object,

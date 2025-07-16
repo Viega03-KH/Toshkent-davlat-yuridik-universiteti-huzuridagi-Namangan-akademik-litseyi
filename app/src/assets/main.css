@@ -6,7 +6,7 @@ html,
 body {
   scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
-  background-color: #fdfdfd94; /* Ghost White */
+  background-color: #fdfdfd9f; /* Ghost White */
 
   background-image: url('../assets/bgimg/rm380-12.jpg');
   background-size: cover;
@@ -137,3 +137,15 @@ body {
   color: #7c7c7c !important; /* slate-800 */
 }
 
+
+
+/* main.css yoki App.vue ichida: */
+#nprogress .bar {
+  background: #0ea5e9 !important; /* ✅ Ko‘k rang (Tailwind blue-400) */
+  height: 3.5px !important;  
+  border-radius: 5px;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #060607, 0 0 5px #0ea5e9; /* Rangli nur effekt (optional) */
+}

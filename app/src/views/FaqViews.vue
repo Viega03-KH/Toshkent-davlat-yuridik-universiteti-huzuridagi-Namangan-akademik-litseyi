@@ -1,8 +1,7 @@
 <template>
   <div class="mx-auto flex flex-col md:flex-row gap-12">
     <div class="flex flex-col text-center md:text-left basis-1/2">
-      <p class="inline-block font-semibold text-blue-400 mb-4">TDYUNAL-FAQ</p>
-      <p class="sm:text-4xl text-3xl font-extrabold text-base-content">Tez-tez so'raladigan savollar</p>
+      <p class="sm:text-4xl text-3xl font-extrabold text-base-content">{{ $t('faq-text-1') }}</p>
     </div>
 
     <ul v-if="faqStore.items.length" class="basis-1/2">

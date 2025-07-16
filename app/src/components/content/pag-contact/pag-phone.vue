@@ -23,7 +23,7 @@ const contacts = computed(() => {
 <template>
     <section class="py-8 px-4">
         <div class="flex justify-between items-center mb-6">
-            <h2 class="text-sm font-bold text-gray-800 lg:text-xl uppercase">Telefon raqamlar</h2>
+            <h2 class="text-sm font-bold text-gray-800 lg:text-xl uppercase">{{ $t("phone-text") }}</h2>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

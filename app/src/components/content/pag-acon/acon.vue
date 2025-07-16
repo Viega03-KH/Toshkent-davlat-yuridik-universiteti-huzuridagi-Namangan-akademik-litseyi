@@ -8,7 +8,7 @@
       <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
         <span
           class="text-xs bg-blue-500 text-white px-4 py-1 uppercase rounded-xl hover:bg-white hover:text-blue-500 transition duration-300 cursor-pointer">
-          {{ item.category || 'E’lon' }}
+          {{ $t('E’lon') }}
         </span>
         <div class="text-white font-normal flex flex-col items-start">
           <span

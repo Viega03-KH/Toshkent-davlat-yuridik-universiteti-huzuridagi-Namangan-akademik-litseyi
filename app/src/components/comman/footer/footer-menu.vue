@@ -21,12 +21,12 @@
 
     <!-- Skeleton holat -->
     <div v-else>
-        <ContentSkeleton />
+        <MenuSkeleton />
     </div>
 </template>
 
 <script setup>
-import ContentSkeleton from '@/skeleton/content-skeleton.vue'
+import MenuSkeleton from '@/skeleton/menu-skeleton.vue'
 import { onMounted, computed } from 'vue'
 import { useMenuStore } from '@/stores/menuStore'
 

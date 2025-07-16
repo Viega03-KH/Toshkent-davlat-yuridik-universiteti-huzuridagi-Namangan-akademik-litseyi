@@ -6,7 +6,7 @@
                 ? 'bg-blue-400 text-white border-blue-400'
                 : 'bg-white text-gray-700 hover:bg-gray-100'
         ]">
-            {{ mode.label }}
+            {{ $t(mode.label) }}
         </button>
     </div>
 </template>
@@ -16,9 +16,9 @@ import { ref, watch } from 'vue'
 
 // Variantlar ro'yxati
 const modes = [
-    { value: 'default', label: "Oddiy ko‘rish" },
-    { value: 'no-color', label: "Rangsiz ko‘rinish" },
-    { value: 'no-images', label: "Rasmlarsiz ko‘rish" }
+    { value: 'default', label: "soos-text-6" },
+    { value: 'no-color', label: "soos-text-7" },
+    { value: 'no-images', label: "soos-text-8" }
 ]
 
 // Faol rejim holati

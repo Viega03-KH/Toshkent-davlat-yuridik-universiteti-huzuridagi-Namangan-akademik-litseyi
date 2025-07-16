@@ -8,9 +8,9 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 19V6h13M5 6H4a1 1 0 00-1 1v11a1 1 0 001 1h1m0-13v13m0-13h10" />
                 </svg>
-                <h2 class="text-lg font-semibold">Tadbirlar</h2>
+                <h2 class="text-lg font-semibold">{{ $t('Tadbir') }}</h2>
             </div>
-            <router-link to="/view/event" class="text-sm hover:underline">Barchasi</router-link>
+            <router-link to="/view/event" class="text-sm hover:underline">{{ $t('Barchasi') }}</router-link>
         </div>
 
         <!-- E'lonlar ro'yxati -->

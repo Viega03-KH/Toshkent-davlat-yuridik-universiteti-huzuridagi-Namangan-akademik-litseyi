@@ -1,14 +1,14 @@
 <template>
     <fieldset class="bg-base-100 border rounded-box w-full max-w-md border-base-300 p-4">
-      <legend class="font-semibold mb-2">Ekran suhandoni:</legend>
+      <legend class="font-semibold mb-2">{{ $t('soos-text-3') }}</legend>
   
       <label class="label cursor-pointer gap-2">
         <input type="checkbox" v-model="readerEnabled" class="checkbox" />
-        <span class="label-text">Matnni ovozda o‘qib berish</span>
+        <span class="label-text">{{ $t('soos-text-4') }}</span>
       </label>
   
       <p class="text-md text-gray-500 mt-2 italic text-justify">
-        Matnni sichqoncha bilan belgilang – agar ekran suhandoni yoqilgan bo‘lsa, u ovozda o‘qiydi.
+        {{ $t('soos-text-5') }}
       </p>
     </fieldset>
   </template>

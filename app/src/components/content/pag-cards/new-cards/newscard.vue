@@ -10,15 +10,15 @@
       <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
         <span v-if="item.type === 1"
           class="text-xs bg-blue-500 text-white rounded-xl px-4 py-1 uppercase hover:bg-white hover:text-blue-500 transition duration-300">
-          Yangilik
+          {{ $t('Yangilik') }}
         </span>
         <span v-else-if="item.type === 2"
           class="text-xs bg-blue-500 text-white rounded-xl px-4 py-1 uppercase hover:bg-white hover:text-blue-500 transition duration-300">
-          E'lon
+          {{ $t("E'lon") }}
         </span>
         <span v-else
           class="text-xs bg-blue-500 text-white rounded-xl px-4 py-1 uppercase hover:bg-white hover:text-blue-500 transition duration-300">
-          Tadbir
+          {{ $t("Tadbir") }}
         </span>
         <div class="text-white font-normal flex flex-col items-start">
           <span

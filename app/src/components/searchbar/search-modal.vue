@@ -3,7 +3,7 @@
     <div class="modal-box absolute top-10 max-w-full md:max-w-4xl rounded-lg">
       <!-- Qidiruv input -->
       <label class="input input-bordered w-full flex items-center gap-2 relative">
-        <input v-model="searchTerm" type="text" class="grow pr-8" placeholder="Qidirish uchun kalit so'z kiriting.."
+        <input v-model="searchTerm" type="text" class="grow pr-8" placeholder="Enter a keyword to search."
           @keydown.enter.prevent="performSearch" />
         <button v-if="searchTerm" @click="searchTerm = ''" class="absolute right-3 text-gray-400 hover:text-red-500"
           type="button">
@@ -14,10 +14,10 @@
       <!-- Amal tugmalari -->
       <div class="modal-action flex justify-between items-center mt-4">
         <form method="dialog">
-          <button class="btn btn-ghost">Yopish</button>
+          <button class="btn btn-ghost">close</button>
         </form>
         <button class="btn bg-blue-500 flex text-white items-center gap-2" @click="performSearch">
-          Qidirish
+          {{ $t('search-text-1') }}
         </button>
       </div>
 
@@ -26,7 +26,7 @@
         <div v-if="loading">
           <div class="skeleton h-10 p-3 w-full my-2"></div>
         </div>
-        <div v-else-if="results.length === 0" class="text-gray-500 text-center">Hech nima topilmadi</div>
+        <div v-else-if="results.length === 0" class="text-gray-500 text-center">{{ $t('search-text-2') }}</div>
         <router-link @click="closeModal" :to="`/view/news/${item.url}`" v-else v-for="item in results" :key="item.id"
           class="bg-gray-100 p-3 rounded hover:bg-gray-200 cursor-pointer focus:outline-violet-500">
           <strong class="text-md font-light">{{ item.name }}</strong>

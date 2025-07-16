@@ -5,17 +5,15 @@
             <div class="flex flex-col md:flex-row items-center justify-between">
                 <!-- Left Side: Company Info -->
                 <div class="w-full md:w-1/2 mb-8 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight mb-4">
-                        Toshkent davlat yuridik universiteti huzuridagi <br />
-                        <span class="text-blue-600">Namangan akademik litseyi</span> fotolavhalari
+                    <h1 class="text-4xl md:text-3xl font-bold text-black leading-tight mb-4 uppercase italic">
+                        {{ $t("photo-text-1") }}
                     </h1>
-                    <p class="text-2xl text-gray-600 mb-6 italic">
-                        "Litseyimiz – yuksak bilim, maʼnaviyat va huquqiy tafakkurni uyg‘unlashtirgan zamonaviy taʼlim
-                        maskani"
+                    <p class="text-2xl font-light text-blue-600 mb-6 italic">
+                        {{ $t("photo-text-2") }}
                     </p>
                     <router-link to="/gallery"
                         class="inline-block bg-blue-600 text-white font-medium px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 shadow-md">
-                        Bizning gallery
+                        {{ $t("photo-text-3") }}
                     </router-link>
 
                 </div>

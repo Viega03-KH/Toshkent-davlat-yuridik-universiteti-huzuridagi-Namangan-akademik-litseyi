@@ -22,7 +22,7 @@ export const apiService = {
   },
 
   getStats(qamrov) {
-    return api.get('/site/stat', { params: { qamrov } })
+    return api.get('api/site/stat', { params: { qamrov } })
   },
 
   getFaq() {

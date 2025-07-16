@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="flex justify-between">
-            <h1 class="text-2xl font-extrabold pb-6" >Bog'lanish</h1>
+            <h1 class="text-2xl font-extrabold pb-6" >{{ $t("Bog'lanish") }}</h1>
             <Media class="md:flex hidden" />
         </div>
         <hr class="border" >

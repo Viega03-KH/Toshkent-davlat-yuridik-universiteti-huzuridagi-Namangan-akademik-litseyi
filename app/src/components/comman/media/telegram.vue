@@ -10,8 +10,7 @@ import bgImage from '@/assets/bgimg/tg_bg-1.png'
     <div class="absolute inset-0 bg-opacity-25 rounded-md bg-blue-800"></div>
 
     <div class="relative">
-      <h2 class="text-xl font-bold text-white md:text-2xl">Telegram</h2>
-      <p class="text-white">kanalimizni kuzatib boring</p>
+      <h2 class="text-xl font-bold text-white md:text-2xl">Telegram kanalimizni kuzatib boring</h2>
     </div>
   </a>
 </template>

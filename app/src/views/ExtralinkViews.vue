@@ -1,10 +1,10 @@
 <template>
-    <section class="py-10 bg-gray-50">
+    <section class="py-10">
         <div class="mx-auto">
-            <h2 class="text-xl font-bold mb-6">FOYDALI HAVOLALAR</h2>
+            <h2 class="text-xl font-bold mb-6 uppercase">{{ $t("extralink-text") }}</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 <a v-for="link in links" :key="link.title" :href="link.url" target="_blank"
-                    class="bg-white relative shadow-md p-4 rounded-t-xl flex flex-col items-center text-center hover:shadow-2xl transition group px-2 box-border border">
+                    class="bg-white relative p-4 flex flex-col items-center text-center hover:shadow-2xl transition group px-2 box-border border border-white hover:border-blue-400">
                     <img :src="link.logo" :alt="link.title" class="w-16 h-16 mb-4 object-contain" />
                     <p class="text-sm font-medium text-gray-800">{{ link.title }}</p>
                     <span

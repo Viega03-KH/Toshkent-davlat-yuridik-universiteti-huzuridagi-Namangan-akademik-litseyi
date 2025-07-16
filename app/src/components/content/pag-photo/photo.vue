@@ -35,7 +35,7 @@
       </button>
     </div>
     <form method="dialog" class="modal-backdrop">
-      <button>Yopish</button>
+      <button>close</button>
     </form>
   </dialog>
 
