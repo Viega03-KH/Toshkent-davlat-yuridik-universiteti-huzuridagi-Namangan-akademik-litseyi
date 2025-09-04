@@ -1,58 +1,53 @@
 <template>
-    <div class="p-4">
-      <h2 class="text-xl font-bold mb-4">Shunga o‘xshash videolar</h2>
-  
-      <div v-if="relatedVideos.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div v-for="video in relatedVideos" :key="video.id.videoId" class="shadow rounded overflow-hidden">
-          <iframe
-            class="w-full aspect-video"
-            :src="`https://www.youtube.com/embed/${video.id.videoId}`"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-          <p class="mt-2 px-2 text-sm font-medium">{{ video.snippet.title }}</p>
-        </div>
+  <div>
+    <div v-if="loading" class="text-center text-gray-500"><span class="loading loading-spinner loading-xl"></span></div>
+    <div v-else-if="error" class="text-center text-red-500">{{ error }}</div>
+
+    <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <Yutubecard />
+      <div v-for="(v, i) in videos" :key="i"
+        class="e rounded-xl group hover:bg-white hover:shadow-lg p-3 cursor-pointer transition ease-in-out will-change-transform">
+        <iframe class="w-full h-40 rounded-lg" :src="`https://www.youtube.com/embed/${v.videoId}`" :title="v.title"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen *"
+          allowfullscreen></iframe>
+        <h3 class="mt-3 text-sm font-semibold line-clamp-2">{{ v.title }}</h3>
+        <p class="text-xs text-gray-500">{{ new Date(v.published).toLocaleDateString() }}</p>
       </div>
-  
-      <div v-else class="text-gray-500">Tavsiya etilgan videolar yuklanmoqda...</div>
     </div>
-  </template>
-  
-  <script setup>
-  import { ref, onMounted } from 'vue'
-  import axios from 'axios'
-  
-  const relatedVideos = ref([])
-  const BASE_VIDEO_ID = '7ghhRHRP6t4' // <-- bu videoga o‘xshashlar olinadi
-  
-  onMounted(async () => {
-    const options = {
-      method: 'GET',
-      url: 'https://youtube-v31.p.rapidapi.com/search',
-      params: {
-        relatedToVideoId: BASE_VIDEO_ID,
-        part: 'id,snippet',
-        type: 'video',
-        maxResults: '9'
-      },
-      headers: {
-        'x-rapidapi-key': '0cf3f2eee0mshd85cc3a65fbdf65p11469cjsn4bd3c449b3b7',
-        'x-rapidapi-host': 'youtube-v31.p.rapidapi.com'
-      }
+  </div>
+</template>
+
+<script setup>
+import Yutubecard from '@/components/content/pag-yutube/yutubecard.vue'
+import { ref, onMounted } from "vue"
+const channelId = "UCTAhGEQDYohjqmDAsD9yRBg"
+const videos = ref([])
+const loading = ref(true)
+const error = ref(null)
+
+onMounted(async () => {
+  try {
+    const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`
+
+    const res = await fetch(apiUrl)
+    const data = await res.json()
+
+    if (!data.items) {
+      throw new Error("RSS")
     }
-  
-    try {
-      const response = await axios.request(options)
-      relatedVideos.value = response.data.items
-    } catch (error) {
-      console.error('Tavsiya etilgan videolarni olishda xatolik:', error)
-    }
-  })
-  </script>
-  
-  <style scoped>
-  .aspect-video {
-    aspect-ratio: 16 / 9;
+
+    videos.value = data.items.slice(0, 15).map(v => ({
+      title: v.title,
+      videoId: v.link.split("v=")[1],
+      published: v.pubDate
+    }));
+  } catch (err) {
+    error.value = "Videolarni yuklashda xatolik yuz berdi."
+    console.error(err);
+  } finally {
+    loading.value = false;
   }
-  </style>
-  
+});
+</script>

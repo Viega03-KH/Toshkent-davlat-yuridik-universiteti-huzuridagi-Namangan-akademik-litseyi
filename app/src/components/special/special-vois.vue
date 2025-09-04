@@ -1,5 +1,5 @@
 <template>
-    <fieldset class="bg-base-100 border rounded-box w-full max-w-md border-base-300 p-4">
+    <fieldset class="bg-base-100 border rounded-box w-full max-w-full border-base-300 p-4">
       <legend class="font-semibold mb-2">{{ $t('soos-text-3') }}</legend>
   
       <label class="label cursor-pointer gap-2">

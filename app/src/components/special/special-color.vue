@@ -1,5 +1,5 @@
 <template>
-    <div class="flex w-full justify-center flex-wrap gap-2 mt-4">
+    <div class="flex w-full border rounded-box justify-center flex-wrap gap-2 mt-4 py-4">
         <button v-for="(mode, index) in modes" :key="index" @click="setMode(mode.value)" :class="[
             'btn font-light',
             activeMode === mode.value

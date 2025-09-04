@@ -6,6 +6,7 @@ import { useAconStore } from '@/stores/aconStore'
 import { useEventStore } from '@/stores/eventStore'
 import { useStaffStore } from '@/stores/staffStore'
 import { useContentStore } from '@/stores/contentStore'
+import { useStatStore } from '@/stores/statStore'
 
 import uzFlag from '@/assets/flags/uz.svg'
 import ruFlag from '@/assets/flags/ru.svg'
@@ -17,7 +18,8 @@ const flags = {
   en: enFlag
 }
 
-const langs = ['uz', 'ru', 'en']
+// const langs = ['uz', 'ru', 'en']
+const langs = ['uz']
 
 const langStore = useLangStore()
 const menuStore = useMenuStore()
@@ -26,6 +28,7 @@ const aconStore = useAconStore()
 const eventStore = useEventStore()
 const staffStore = useStaffStore()
 const contentStore = useContentStore()
+const statStore = useStatStore()
 
 function changeLang(lang) {
   langStore.setLang(lang)
@@ -35,6 +38,7 @@ function changeLang(lang) {
   eventStore.loadEvent()
   staffStore.loadStaff()
   contentStore.loadContent()
+  statStore.loadStat()
 }
 </script>
 

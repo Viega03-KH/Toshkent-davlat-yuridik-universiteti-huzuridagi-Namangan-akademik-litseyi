@@ -17,11 +17,11 @@
 </script>
 
 <template>
-  <a href="#"
-    class="flex flex-col md:flex-row items-center justify-center gap-3 w-full max-w-[80%] md:max-w-[50%] md:text-start text-center">
+  <router-link to="/"
+    class="flex flex-col md:flex-row items-center justify-center gap-3 w-full md:text-start text-center">
     <img class="w-11 h-auto object-contain" :src="logoSrc" alt="logo" />
     <span :class="['text-[12px] md:text-base font-semibold uppercase leading-snug tracking-wide', color]">
       {{ $t('logo') }}
     </span>
-  </a>
+  </router-link>
 </template>

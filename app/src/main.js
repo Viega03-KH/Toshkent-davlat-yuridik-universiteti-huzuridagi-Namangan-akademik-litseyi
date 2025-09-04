@@ -9,8 +9,15 @@ import 'aos/dist/aos.css'
 
 const app = createApp(App)
 
+
+AOS.init({
+    once: true,         
+    easing: 'ease-out'
+  })
+
 app.use(createPinia())
 app.use(i18n)
 app.use(router)
 AOS.init()
 app.mount('#app')
+

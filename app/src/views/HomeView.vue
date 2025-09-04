@@ -15,20 +15,20 @@
     <div class="mb-6 flex items-end justify-between gap-4">
       <h2 class="text-sm font-bold text-gray-800 lg:text-xl uppercase">{{ $t('Yangiliklar') }}</h2>
 
-      <RouterLink to="view/news" class="btn">{{ $t('Barchasi') }}</RouterLink>
+      <RouterLink to="view/news" class="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 text-sm font-medium rounded-md hover:bg-gray-200 border">{{ $t('Barchasi') }}</RouterLink>
     </div>
     <NewCardHome />
   </div>
-  <div class="bg-carsuel">
-    <Carsuel />
-  </div>
-  <StatsSection />
+  <StatsSection class="pt-40" />
+  <Chanel class="pt-40" />
+  <Carsuel class="bg-carsuel" />
   <ExtralinkViews />
   <PagPhone />
 </template>
 
 
 <script setup>
+import Chanel from '@/components/content/pag-yutube/chanel.vue'
 import PagPhone from '@/components/content/pag-contact/pag-phone.vue'
 import ExtralinkViews from './ExtralinkViews.vue'
 import NewCard from '@/components/content/pag-news/newcard.vue'

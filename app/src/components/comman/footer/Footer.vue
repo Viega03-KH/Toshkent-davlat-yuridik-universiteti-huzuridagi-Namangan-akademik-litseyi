@@ -16,8 +16,8 @@
           class="flex flex-col md:flex-row md:justify-between md:items-start items-center text-center md:text-start">
           <!-- Logo: markazda mobil, chapda desktop -->
           <div class="w-full md:w-auto justify-center md:justify-start">
-            <Logo color="text-white" />
-            <Media class="pt-10" />
+            <Logo color="text-white" class="max-w-[100%] md:max-w-[90%]" />
+            <Media class="pt-10 py-10" />
           </div>
           <FooterMenu />
         </footer>

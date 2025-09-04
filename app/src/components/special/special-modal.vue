@@ -18,7 +18,7 @@ function resetAll() {
 
 <template>
     <dialog id="my_modal_3" class="modal">
-        <div class="modal-box top-4 absolute">
+        <div class="modal-box top-4 absolute max-w-xl">
             <form method="dialog">
                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
             </form>

@@ -1,12 +1,6 @@
-<script setup>
-import hardware_software_logo from "@/assets/logo/hardware_software_logo_transparent.png";
-</script>
 
 <template>
   <button class="custom-button">
-    <div class="logo-container">
-      <img :src="hardware_software_logo" alt="Logo" />
-    </div>
     <div class="text-container">
       <span class="title">Hardware and Software</span>
       <span class="subtitle">Services</span>
@@ -23,7 +17,6 @@ import hardware_software_logo from "@/assets/logo/hardware_software_logo_transpa
   color: #fff;
   outline: 2px solid #000;
   box-shadow: 5px 5px 0 #000;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -71,28 +64,6 @@ import hardware_software_logo from "@/assets/logo/hardware_software_logo_transpa
   background-color: #fff;
   color: #000;
   border-color: #000;
-}
-
-.logo-container {
-  width: 50px;
-  height: 50px;
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
-  z-index: 2;
-}
-
-.logo-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.custom-button:hover .logo-container {
-  transform: rotate(-5deg) scale(1.05);
-}
-
-.custom-button:active .logo-container {
-  transform: rotate(5deg) scale(0.95);
 }
 
 .text-container {

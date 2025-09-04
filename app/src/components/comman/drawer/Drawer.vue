@@ -14,7 +14,7 @@
             <div class="menu text-base-content w-full h-full p-6">
                 <div class="container mt-0 md:mt-10 mx-auto md:px-36 px-1 flex flex-col gap-4">
                     <div class="flex justify-between md:border-b pb-0 md:pb-10">
-                        <Logo class="md:flex hidden" />
+                        <Logo class="md:flex hidden max-w-[80%] md:max-w-[50%]" />
                         <div class="flex items-center justify-between md:w-auto w-full gap-1">
                             <Lang />
                             <label for="my-drawer" class="btn text-sm"><CircleX :stroke-width="0.75" /></label>

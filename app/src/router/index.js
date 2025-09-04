@@ -76,15 +76,15 @@ const router = createRouter({
   }
 })
 
-// Loader boshlanishi
-router.beforeEach((to, from, next) => {
-  startLoading()
-  next()
-})
+// // Loader boshlanishi
+// router.beforeEach((to, from, next) => {
+//   startLoading()
+//   next()
+// })
 
-// Loader tugashi
-router.afterEach(() => {
-  finishLoading()
-})
+// // Loader tugashi
+// router.afterEach(() => {
+//   finishLoading()
+// })
 
 export default router

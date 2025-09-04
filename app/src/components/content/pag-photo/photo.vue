@@ -1,21 +1,19 @@
 <template>
   <!-- Yuklanayotgan holat -->
   <div v-if="photoStore.loading" class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-    <Yutubecard />
     <div v-for="n in 2" :key="n" class="skeleton h-[30vh] w-full rounded-sm"></div>
   </div>
 
   <!-- Rasm ro‘yxati -->
-  <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    <Yutubecard />
-    <div v-for="item in photoStore.items" :key="item.id" class="group cursor-pointer relative" :data-aos="'zoom-in-up'"
-      :data-aos-delay="index * 200" @click="openModal(item.id)">
+  <div v-else class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 gap-1">
+    <div v-for="(item, index) in photoStore.items.slice(0, 100)" :key="item.id" class="group cursor-pointer relative" :data-aos="'zoom-in-up'"
+      :data-aos-delay="index" @click="openModal(item.id)">
       <img :src="item.url" loading="lazy" :alt="item.title || 'Image'"
-        class="w-full h-[30vh] object-cover rounded-sm transition-transform transform" />
+        class="w-full rounded-xl lg:h-[30vh] object-cover transition-transform transform" />
       <div
-        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+        class="absolute inset-0 flex items-center justify-center transition-opacity">
         <a
-          class="bg-white text-gray-800 px-2 py-2 rounded-full hover:bg-blue-400 hover:text-white transition-colors group-hover:scale-[102%]">
+          class="bg-white text-gray-800 px-2 py-2 rounded-full hover:bg-blue-400 hover:text-white transition ease-in-out will-change-transform group-hover:scale-[120%]">
           <Expand :stroke-width="0.5" />
         </a>
       </div>
@@ -23,15 +21,15 @@
   </div>
 
   <dialog id="my_modal_13" class="modal">
-    <div class="modal-box absolute max-w-4xl rounded-sm overflow-hidden bg-none">
-      <img :src="selectedPhoto?.url" alt="Preview" loading="lazy" class="w-full rounded-sm" />
+    <div class="modal-box absolute max-w-4xl rounded-sm overflow-hidden bg-transparent p-0">
+      <img :src="selectedPhoto?.url" alt="Preview" loading="lazy" class="w-full rounded-xl" />
       <button @click.stop="goToPrev"
-        class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white text-black px-3 py-2 rounded-full z-10">
-        <ArrowLeft :stroke-width="0.5" />
+        class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white px-3 py-2 rounded-full z-10 hover:bg-blue-400 hover:text-white transition ease-in-out will-change-transform group-hover:scale-[120%]">
+        <ArrowLeft class="w-5 h-7" :stroke-width="1.5" />
       </button>
       <button @click.stop="goToNext"
-        class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white text-black px-3 py-2 rounded-full z-10">
-        <ArrowRight :stroke-width="0.5" />
+        class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white px-3 py-2 rounded-full z-10 hover:bg-blue-400 hover:text-white transition ease-in-out will-change-transform group-hover:scale-[120%]">
+        <ArrowRight class="w-5 h-7" :stroke-width="1.5" />
       </button>
     </div>
     <form method="dialog" class="modal-backdrop">
@@ -45,7 +43,6 @@
 
 
 <script setup>
-import Yutubecard from '@/components/content/pag-yutube/yutubecard.vue'
 import { ref, onMounted } from 'vue'
 import { usePhotoStore } from '@/stores/photoStore'
 import { Expand, ArrowRight, ArrowLeft } from 'lucide-vue-next'

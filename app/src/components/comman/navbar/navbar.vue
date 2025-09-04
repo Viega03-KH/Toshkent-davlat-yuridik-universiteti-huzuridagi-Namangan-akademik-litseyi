@@ -13,11 +13,11 @@
   <TopBar />
 
   <!-- Sticky Header (Logo + NavMenu) -->
-  <div class="sticky top-0 z-40 bg-blue-50 border-b border-blue-800/20 shadow-sm">
+  <div class="md:sticky top-0 z-40 bg-blue-50 border-b border-blue-800/20 shadow-sm">
     <div class="container mx-auto px-2 md:px-20 flex flex-col">
       <!-- Logo va quote -->
       <div class="flex md:justify-between justify-center items-center gap-4 py-4">
-        <Logo />
+        <Logo class="max-w-[80%] md:max-w-[50%]" />
         <p class="hidden md:flex"></p>
       </div>
 

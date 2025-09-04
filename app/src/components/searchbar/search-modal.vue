@@ -49,7 +49,7 @@ const debounceTimer = ref(null)
 const allNewsStore = useallNewsStore()
 const emit = defineEmits(['select'])
 
-// 🔍 Asosiy qidiruv funksiyasi (darhol ishlaydi)
+// Asosiy qidiruv funksiyasi (darhol ishlaydi)
 async function performSearch() {
   if (!searchTerm.value.trim()) return
   loading.value = true
@@ -71,7 +71,7 @@ async function performSearch() {
   }, 4000)
 }
 
-// ⏱ Debounce: 0.5s dan keyin avtomatik qidiruv
+// Debounce: 0.5s dan keyin avtomatik qidiruv
 watch(searchTerm, (newVal) => {
   if (debounceTimer.value) clearTimeout(debounceTimer.value)
 
@@ -86,14 +86,14 @@ watch(searchTerm, (newVal) => {
   }, 500)
 })
 
-// ❌ Tozalash
+// Tozalash
 function clearSearch() {
   searchTerm.value = ''
   results.value = []
   loading.value = false
 }
 
-// 🔐 Modalni yopish va tozalash
+// Modalni yopish va tozalash
 function closeModal() {
   const modal = document.getElementById('my_modal_1')
   if (modal?.close) modal.close()
